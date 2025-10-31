@@ -1,7 +1,17 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
-
+/* SUAS NOVAS CORES DO FIGMA */
 :root {
+  /* ... (pode haver outras cores aqui, deixe-as como estão) ... */
+
+  --app-color-header-bg: #9ADAFF;    /* Azul super claro do Header */
+  --app-color-primary-medium: #9ADAFF; /* Azul médio dos círculos e Tab Bar */
+  --app-color-primary-dark: #004153;  /* Azul escuro/petróleo para textos e ícones */
+  
+  --app-color-input-bg: #f0f0f0;
+  --app-color-white: #ffffff;
+  --app-color-black: #000000;
+
   --ion-color-primary: #9ADAFF;
   --ion-color-primary-rgb: 154,218,255;
   --ion-color-primary-contrast: #000000;

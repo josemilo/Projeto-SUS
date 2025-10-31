@@ -1,0 +1,63 @@
+/* --- CONTENT --- */
+ion-content {
+  --background: var(--app-color-white);
+}
+
+.content-padding {
+  padding: 0 12px;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--app-color-primary-dark);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 4px;
+
+  /* REMOVENDO a fonte serifada do título */
+  // font-family: 'serif'; <-- Removido
+}
+
+/* --- GRID DE SERVIÇOS --- */
+.service-card {
+  --background: var(--app-color-white);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  text-align: center;
+  margin: 0;
+  padding: 16px 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.service-icon-circle {
+  background-color: var(--app-color-primary-medium);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.service-icon-circle ion-icon {
+  color: var(--app-color-primary-dark);
+  font-size: 32px;
+}
+
+.service-card ion-label {
+  color: var(--app-color-primary-dark);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: normal;
+  line-height: 1.3;
+
+  /* REMOVENDO a fonte serifada dos cards */
+  // font-family: 'serif'; <-- Removido
+}

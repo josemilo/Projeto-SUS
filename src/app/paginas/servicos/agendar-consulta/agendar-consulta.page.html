@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/servicos"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agendar Consulta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content-padding">
+    
+    <h3 class="page-title">AGENDAR CONSULTA</h3>
+
+    <ion-card class="search-card">
+      <ion-card-content>
+        <ion-label>Especialidade:</ion-label>
+        <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="search-card">
+      <ion-card-content>
+        <ion-label>Nome do Profissional:</ion-label>
+        <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+      </ion-card-content>
+    </ion-card>
+
+  </div> <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <ion-button class="search-button" (click)="buscar()" expand="full">
+        Buscar
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>

@@ -1,0 +1,29 @@
+ion-toolbar {
+    --background: var(--app-color-primary-medium);
+    padding: 0;
+}
+
+ion-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+ion-tab-button {
+    --background: transparent;
+    --background-hover: transparent;
+    --background-activated: transparent;
+    --background-focused: transparent;
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 6px;
+    --padding-bottom: 6px;
+    
+    --color: var(--app-color-primary-dark);
+    --opacity: 0.8;
+    font-size: 11px;
+}
+
+ion-tab-button.tab-selected {
+    --opacity: 1;
+}

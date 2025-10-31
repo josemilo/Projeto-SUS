@@ -1,0 +1,16 @@
+ion-toolbar {
+  /* Aqui está a correção da cor do header. 
+    Usamos a variável do header claro, e não o escuro.
+  */
+  --background: var(--app-color-header-bg); 
+}
+
+.header-logo-img {
+  height: 30px;
+  margin-left: 16px;
+}
+
+ion-buttons[slot="end"] ion-icon {
+  color: var(--app-color-white);
+  font-size: 24px;
+}

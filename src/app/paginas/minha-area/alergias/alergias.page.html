@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/minha-area"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Alergias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content-container">
+    
+    <ion-img src="assets/icon/alergia.png" alt="Ilustração de Alergia" class="main-image"></ion-img>
+
+    <h2 class="main-title">
+      Você ainda não possui alergias cadastradas.
+    </h2>
+
+    <p class="description-text">
+      Ao adicionar alergias, os profissionais de saúde poderão visualizar as informações registradas no seu próximo atendimento, por meio do Conecte SUS Profissional
+    </p>
+
+    <ion-button class="add-button" (click)="abrirModalAlergias()" expand="full">
+      <ion-icon name="add" slot="start"></ion-icon>
+      Adicionar Alergias
+    </ion-button>
+
+  </div> </ion-content>
