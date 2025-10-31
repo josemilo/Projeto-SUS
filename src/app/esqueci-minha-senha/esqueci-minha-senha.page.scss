@@ -1,0 +1,115 @@
+:host {
+  ion-content.login-content {
+    --ion-background-color: #85c9f2; /* Fundo azul */
+    --background: #85c9f2;
+    position: relative;
+    height: 100%;
+  }
+
+  /* ===== LOGO NA PARTE AZUL ===== */
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    z-index: 2;
+  }
+
+  .logo img {
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* ===== PARTE BRANCA ===== */
+  .white-shape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;
+    background-color: #ffffff;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 0px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .login-container {
+    width: 85%;
+    text-align: center;
+  }
+
+  .login-title {
+    font-size: 22px;
+    color: #004aad;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .info-text {
+    font-size: 14px;
+    color: #1a1a1a !important;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    opacity: 1 !important;
+  }
+
+  .input-group {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .input-group label {
+    font-size: 13px;
+    color: #004aad;
+  }
+
+  ion-input {
+    --background: #f2f2f7;
+    --color: #000000;
+    border-radius: 6px;
+    margin-top: 5px;
+    padding: 5px;
+  }
+
+  .login-button {
+    --background: #85c9f2;
+    color: #004aad;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+
+  .back-link {
+    display: block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #004aad;
+    text-decoration: none;
+  }
+
+  /* ✅ Mensagem de sucesso */
+  .mensagem-sucesso {
+    background-color: #85c9f2;
+    color: #000;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ok-button {
+    background: transparent;
+    color: #004aad;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

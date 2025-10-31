@@ -1,0 +1,89 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+
+/* src/global.scss */
+
+/* ... todo o código que já está aí em cima */
+
+/* Customização do tab bar */
+ion-tab-bar {
+  --background: #a8ddf3;       /* cor do rodapé */
+  --color: #000;               /* cor dos ícones/labels */
+  --color-selected: #004aad;   /* cor do tab ativo */
+}
+/* Logo ajustado */
+.logo-sus {
+  width: 90px;      /* aumenta um pouco a resolução */
+  height: auto;
+  margin-left: 5px; /* cola no canto esquerdo */
+}
+
+/* Banner */
+.banner-container {
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* mantém a proporção da imagem */
+}
+
+.banner-text {
+  position: absolute;
+  top: 30%;       /* desce/sobe o texto */
+  left: 15px;     /* aproxima do canto esquerdo */
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;  /* ajusta a altura entre as linhas */
+}
+
+.banner-text h2 {
+  margin: 0;
+}
+
+/* Deixar "cultivar" mais perto do texto de cima */
+.banner-text .highlight {
+  margin-top: -5px; /* sobe só essa palavra */
+}
+
+

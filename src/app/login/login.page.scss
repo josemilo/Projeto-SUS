@@ -1,0 +1,138 @@
+:host {
+  ion-content.login-content {
+    --ion-background-color: #85c9f2; /* fundo azul */
+    --background: #85c9f2;
+    position: relative;
+    height: 100%;
+  }
+
+  /* Forma branca arredondada */
+  .white-shape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;
+    background-color: #ffffff;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 0px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px; /* distância do topo */
+  }
+
+  /* Container principal */
+  .login-container {
+    width: 85%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  /* Título Login */
+  .login-title {
+    font-weight: 800;
+    color: #003366;
+    font-size: 45px; /* Aumentado */
+    margin-bottom: 30px;
+  }
+
+  /* Grupos de inputs */
+  .input-group {
+    text-align: left;
+    margin-bottom: 18px;
+
+    label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #003366;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    ion-input {
+      --background: #f2f2f8;
+      border-radius: 8px;
+      padding-left: 12px;
+      height: 48px;
+      font-size: 16px;
+      --color: #000000; /* texto digitado em preto */
+      color: #000000; /* reforço */
+    }
+
+    ion-input::part(native) {
+      color: #000000 !important; /* garante o preto mesmo em tema escuro */
+      opacity: 1; /* remove transparência */
+    }
+
+    ion-input::placeholder {
+      color: #999999;
+      opacity: 1;
+    }
+  }
+
+  /* Esqueci minha senha */
+  .forgot-password {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    color: #0033cc;
+    margin-bottom: 25px;
+    text-decoration: none;
+  }
+
+  /* Botão Entrar */
+  .login-button {
+    --background: #85c9f2;
+    --color: #003366;
+    font-weight: 700;
+    border-radius: 8px;
+    height: 46px;
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  /* Texto "Não tem conta?" */
+  .signup-text {
+    font-size: 14px;
+    color: #333;
+
+    .signup-link {
+      color: #0033cc;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+
+  /* Login social */
+  .social-login {
+    margin-top: 20px;
+
+    p {
+      font-size: 13px;
+      color: #333;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 8px;
+
+      ion-icon {
+        font-size: 22px;
+        color: #0033cc;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

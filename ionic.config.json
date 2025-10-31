@@ -1,0 +1,7 @@
+{
+  "name": "SusApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,93 @@
+/* Logo no topo */
+.logo-sus {
+  width: 90px;      /* ajustado para garantir uma boa visualização do logo */
+  height: auto;     /* altura proporcional */
+  margin-left: 6px; /* cola no canto esquerdo */
+  object-fit: contain;  /* Garante que o logo seja exibido sem distorções */
+  display: block;   /* Exibe o logo como um bloco */
+}
+
+/* Ícone de configurações */
+.settings-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+/* Banner */
+.banner-container {
+  position: relative;
+  width: 100%;
+}
+.banner-img {
+  width: 100%;
+  height: auto;
+}
+.banner-text {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  color: #fff;
+  font-size: 1.2rem;
+  max-width: 70%;
+  font-weight: bold;
+}
+
+/* Seção de título */
+.section-title {
+  margin: 20px 15px 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Cartões de serviços */
+.service-card {
+  background: #f5faff;
+  border: 1px solid #cce7f5;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px 5px;
+  transition: 0.2s;
+  
+  /* Forçar mesmo tamanho */
+  min-height: 100px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card ion-icon {
+  font-size: 28px; /* aumentei um pouco para equilibrar */
+  color: #0078d7;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 13px;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.service-card:hover {
+  background: #e6f4ff;
+}
+
+/* Botão Ver mais */
+.ver-mais {
+  text-align: right;
+  margin: 10px 15px 20px;
+  color: #0078d7;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Próximos agendamentos */
+.btn-agendamento {
+  margin: 10px 15px 30px;
+  --background: #f2f2f2;
+  --color: #333;
+  font-weight: bold;
+}
+
