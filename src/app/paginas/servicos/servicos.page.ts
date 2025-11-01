@@ -17,7 +17,10 @@ import {
   IonRow,
   IonCol,
   IonLabel,
-  IonCard, IonFooter } from '@ionic/angular/standalone';
+  IonCard, 
+  IonFooter,
+  IonRippleEffect
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-servicos',
@@ -42,6 +45,7 @@ import {
     IonRow,
     IonCol,
     IonLabel,
+    IonRippleEffect
   ],
 })
 export class ServicosPage {
