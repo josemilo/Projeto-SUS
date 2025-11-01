@@ -3,8 +3,20 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'cadastro',
+    redirectTo: 'start',
     pathMatch: 'full',
+  },
+  {
+    path: 'start',
+    loadChildren: () => import('./paginas/auth/start/start.module').then( m => m.StartPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./paginas/auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'esqueci-minha-senha',
+    loadChildren: () => import('./paginas/auth/esqueci-minha-senha/esqueci-minha-senha.module').then( m => m.EsqueciMinhaSenhaPageModule)
   },
   {
     path: 'cadastro',

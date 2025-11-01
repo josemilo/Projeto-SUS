@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start',
@@ -6,8 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['start.page.scss'],
   standalone: false,
 })
-export class StartPage {
+export class StartPage implements OnInit{
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+  }
+
+  ionViewDidEnter() {
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 2500);
+  }
 
 }
