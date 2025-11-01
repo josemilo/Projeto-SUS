@@ -1,0 +1,57 @@
+/* --- CONTENT --- */
+ion-content {
+  --background: var(--app-color-white);
+  --padding-bottom: 60px;
+}
+
+.content-padding {
+  padding: 0 12px;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--app-color-primary-dark);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 4px;
+}
+
+/* --- ESTILOS DOS CARDS DE CAMPANHA --- */
+ion-card {
+  --background: var(--app-color-white);
+  margin-bottom: 16px; 
+  border: 1px solid var(--app-color-card-border);
+}
+
+.card-text-content {
+  padding-left: 8px;
+
+  h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--app-color-primary-dark);
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
+  h5 {
+    font-size: 0.9em;
+    font-weight: normal;
+    font-style: italic;
+    color: var(--app-color-primary-dark);
+    margin: 0 0 8px 0;
+  }
+
+  p {
+    font-size: 0.8em;
+    color: #333;
+    line-height: 1.4;
+  }
+}
+
+ion-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

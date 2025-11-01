@@ -1,7 +1,7 @@
 {
-  "name": "SusApp",
+  "name": "meuApp",
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular"
+  "type": "angular-standalone"
 }

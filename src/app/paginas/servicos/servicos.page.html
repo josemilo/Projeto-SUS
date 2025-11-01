@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <app-cabecalho></app-cabecalho>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content-padding">
+    
+    <h3 class="page-title">NOSSOS SERVIÇOS</h3>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let item of services">
+          <ion-card class="service-card" (click)="onServiceClick(item.id)">
+            <ion-ripple-effect></ion-ripple-effect><div class="service-icon-circle">
+              <ion-icon [name]="item.icon" aria-hidden="true"></ion-icon>
+            </div>
+            <ion-label>{{ item.name }}</ion-label>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-barra-de-abas></app-barra-de-abas>
+</ion-footer>

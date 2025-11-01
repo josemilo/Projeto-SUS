@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/servicos"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agendar Exame</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content-padding">
+    
+    <h3 class="page-title">AGENDAR EXAME</h3>
+
+    <ion-card class="search-card">
+      <ion-card-content>
+        <ion-label>Tipo de exame:</ion-label>
+        <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="search-card">
+      <ion-card-content>
+        <ion-label>Anexar foto da guia:</ion-label>
+        <ion-button class="upload-button" expand="full" (click)="carregarArquivo()">
+          Carregar arquivo
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="search-card">
+      <ion-card-content>
+        <ion-label>Escolha uma unidade:</ion-label>
+        <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+      </ion-card-content>
+    </ion-card>
+
+  </div> <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <ion-button class="agendar-button" (click)="agendar()" expand="full">
+        Agendar
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>

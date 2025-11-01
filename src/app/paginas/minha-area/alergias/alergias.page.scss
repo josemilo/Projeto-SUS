@@ -1,0 +1,64 @@
+/* --- Header (Igual ao molde) --- */
+ion-toolbar {
+  --background: var(--app-color-header-bg);
+}
+ion-title {
+  color: var(--app-color-primary-dark);
+  font-weight: bold;
+}
+ion-back-button {
+  color: var(--app-color-primary-dark);
+}
+
+/* --- Content (Igual ao molde) --- */
+ion-content {
+  --background: var(--app-color-white);
+}
+
+/* --- Layout de Centralização --- */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  text-align: center;
+  
+  min-height: 90%; 
+  
+  padding: 0 32px;
+  padding-top: 32px;
+}
+
+.main-image {
+  
+  width: 200px; 
+  max-width: 60%;
+  height: auto;
+  margin-bottom: 32px;
+}
+
+.main-title {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: var(--app-color-primary-dark);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.description-text {
+  font-size: 0.9em;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* --- Botão Adicionar --- */
+.add-button {
+  --background: var(--app-color-primary-medium); 
+  --color: var(--app-color-primary-dark);
+  --border-radius: 8px;
+  --box-shadow: none;
+  font-weight: bold;
+  height: 48px;
+  margin: 0;
+  text-transform: none;
+}

@@ -5,18 +5,27 @@
   "projects": {
     "app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@ionic/angular-toolkit:page": {
+          "styleext": "scss",
+          "standalone": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "www",
+            "outputPath": {
+              "base": "www",
+              "browser": ""
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -24,15 +33,11 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
-              },
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": []
+            "scripts": [],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -57,21 +62,13 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
             },
             "ci": {
               "progress": false
-=======
->>>>>>> 7c1baae0bf40b732643115fc3dce229b9155947a
->>>>>>> dcc37e16a671abeb764fe4b964da8e89c84768a8
             }
           },
           "defaultConfiguration": "production"
@@ -84,15 +81,9 @@
             },
             "development": {
               "buildTarget": "app:build:development"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
             },
             "ci": {
               "progress": false
-=======
->>>>>>> 7c1baae0bf40b732643115fc3dce229b9155947a
->>>>>>> dcc37e16a671abeb764fe4b964da8e89c84768a8
             }
           },
           "defaultConfiguration": "development"
@@ -116,36 +107,22 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
-              },
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
             "scripts": []
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
           },
           "configurations": {
             "ci": {
               "progress": false,
               "watch": false
             }
-=======
->>>>>>> 7c1baae0bf40b732643115fc3dce229b9155947a
->>>>>>> dcc37e16a671abeb764fe4b964da8e89c84768a8
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
@@ -155,7 +132,7 @@
     "schematicCollections": [
       "@ionic/angular-toolkit"
     ],
-    "analytics": false
+    "analytics": "340a2013-0ebb-41e4-9aee-45a499d720f6"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
@@ -163,6 +140,12 @@
     },
     "@ionic/angular-toolkit:page": {
       "styleext": "scss"
+    },
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
     }
   }
 }
