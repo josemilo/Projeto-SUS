@@ -1,7 +1,5 @@
 <ion-content class="cadastro-content">
-  
   <div class="content-card">
-    
     <div class="custom-header">
       <ion-button class="custom-back-button" fill="clear" (click)="goBack()">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
@@ -9,32 +7,90 @@
       <h1 class="page-title">Cadastro</h1>
     </div>
 
-    <div class="form-container">
-      <div class="form-field">
-        <ion-label>Nome:</ion-label>
-        <ion-input type="text" class="custom-input"></ion-input>
-      </div>
-      <div class="form-field">
-        <ion-label>Sobrenome:</ion-label>
-        <ion-input type="text" class="custom-input"></ion-input>
-      </div>
-      <div class="form-field">
-        <ion-label>Email:</ion-label>
-        <ion-input type="email" class="custom-input"></ion-input>
-      </div>
-      <div class="form-field">
-        <ion-label>Senha:</ion-label>
-        <ion-input type="password" class="custom-input"></ion-input>
-      </div>
-      <div class="form-field">
-        <ion-label>Confirme a senha:</ion-label>
-        <ion-input type="password" class="custom-input"></ion-input>
-      </div>
-    </div>
-    
-    <ion-button expand="block" class="register-button">
-       Cadastrar
-    </ion-button>
+    <form [formGroup]="cadastroForm" (ngSubmit)="fazerCadastro()">
+      <div class="form-container">
+        <div class="form-field">
+          <ion-label>Nome:</ion-label>
+          <ion-input
+            id="nome"
+            formControlName="nome"
+            type="text"
+            class="custom-input"
+          ></ion-input>
+        </div>
+        <div class="form-field">
+          <ion-label>Email:</ion-label>
+          <ion-input
+            id="email"
+            formControlName="email"
+            type="email"
+            class="custom-input"
+          ></ion-input>
+        </div>
 
+        <div class="form-field">
+          <ion-label>Data de Nascimento:</ion-label>
+          <ion-input
+            id="dataDeNascimento"
+            formControlName="dataDeNascimento"
+            type="date"
+            class="custom-input"
+          ></ion-input>
+        </div>
+
+        <div class="form-field">
+          <ion-label>CNS:</ion-label>
+          <ion-input
+            id="cns"
+            formControlName="cns"
+            type="text"
+            class="custom-input"
+          ></ion-input>
+        </div>
+
+        <div class="form-field">
+          <ion-label>CPF:</ion-label>
+          <ion-input
+            id="cpf"
+            formControlName="cpf"
+            type="text"
+            class="custom-input"
+          ></ion-input>
+        </div>
+
+        <div class="form-field">
+          <ion-label>Telefone:</ion-label>
+          <ion-input
+            id="telefone"
+            formControlName="telefone"
+            type="tel"
+            class="custom-input"
+          ></ion-input>
+        </div>
+
+        <div class="form-field">
+          <ion-label>Senha:</ion-label>
+          <ion-input
+            id="senha"
+            formControlName="senha"
+            type="password"
+            class="custom-input"
+          ></ion-input>
+        </div>
+        <div class="form-field">
+          <ion-label>Confirme a senha:</ion-label>
+          <ion-input
+            id="confirmarSenha"
+            formControlName="confirmarSenha"
+            type="password"
+            class="custom-input"
+          ></ion-input>
+        </div>
+      </div>
+
+      <ion-button type="submit" expand="block" class="register-button">
+        Cadastrar
+      </ion-button>
+    </form>
   </div>
 </ion-content>
