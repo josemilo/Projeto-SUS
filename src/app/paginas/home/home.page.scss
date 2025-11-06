@@ -120,3 +120,33 @@ ion-content {
   color: #888;
   font-weight: 500;
 }
+
+/* ============================
+   Ajustes para telas específicas
+   ============================ */
+/* Celulares bem pequenos */
+@media (max-width: 360px) {
+  :root { --card-min-width: 100px; --card-max-width: 140px; }
+  .top-image { height: clamp(100px, 20vh, 160px); }
+  .app-wrapper { padding: 10px; }
+}
+
+/* Tablets e landscape phones */
+@media (min-width: 481px) and (max-width: 767px) {
+  :root { --card-min-width: 120px; --card-max-width: 170px; }
+  .top-image { height: clamp(140px, 24vh, 220px); }
+}
+
+/* Desktops médios */
+@media (min-width: 768px) and (max-width: 1099px) {
+  :root { --card-min-width: 140px; --card-max-width: 190px; }
+  .app-wrapper { padding: clamp(16px, 3.5vw, 36px); }
+}
+
+/* Monitores grandes / Vision / Kiosk */
+@media (min-width: 1100px) {
+  :root { --card-min-width: 160px; --card-max-width: 220px; }
+  .top-image { height: clamp(200px, 30vh, 380px); }
+  .app-wrapper { padding-left: 40px; padding-right: 40px; }
+  .service-card-home { min-height: 140px; }
+}

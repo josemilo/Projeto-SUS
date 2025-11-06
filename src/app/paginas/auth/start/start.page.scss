@@ -66,3 +66,24 @@
 .banner-text .highlight {
   margin-top: -5px; /* sobe só essa palavra */
 }
+
+/* 📱 Ajustes específicos por breakpoint */
+@media (max-width: 600px) {
+  .splash-logo {
+    width: 80vw;
+    margin-bottom: 3vh;
+  }
+
+  .banner-text {
+    top: 20%;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner-text {
+    top: 35%;
+    left: 10%;
+    font-size: 24px;
+  }
+}
