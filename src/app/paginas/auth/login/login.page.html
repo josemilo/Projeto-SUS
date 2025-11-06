@@ -4,39 +4,51 @@
     <div class="login-container">
       <h1 class="login-title">Login</h1>
 
-      <div class="input-group">
-        <label for="usuario">Usuário:</label>
-        <ion-input id="usuario" placeholder="Digite seu usuário"></ion-input>
-      </div>
-
-      <div class="input-group">
-        <label for="senha">Senha:</label>
-        <ion-input id="senha" type="password" placeholder="Digite sua senha"></ion-input>
-      </div>
-     
-      <a routerLink="/esqueci-minha-senha" class="forgot-password">Esqueci minha senha</a>
-
-
-
-      <ion-button expand="block" class="login-button">Entrar</ion-button>
-
-      <p class="signup-text">
-        Não tem conta?
-        <a routerLink="/cadastro" class="signup-link">Cadastre-se</a>
-      </p>
-
-      <div class="social-login">
-        <p>entrar com</p>
-        <div class="social-icons">
-          <ion-icon name="logo-google"></ion-icon>
-          <ion-icon name="logo-facebook"></ion-icon>
-          <ion-icon name="logo-apple"></ion-icon>
+      <form [formGroup]="loginForm" (ngSubmit)="fazerLogin()">
+        <div class="input-group">
+          <label for="usuario">Usuário:</label>
+          <ion-input
+            id="usuario"
+            placeholder="Digite seu usuário"
+            formControlName="usuario"
+          ></ion-input>
         </div>
-      </div>
+        <div class="input-group">
+          <label for="senha">Senha:</label>
+          <ion-input
+            id="senha"
+            type="password"
+            placeholder="Digite sua senha"
+            formControlName="senha"
+          ></ion-input>
+        </div>
+
+        <a routerLink="/esqueci-minha-senha" class="forgot-password"
+          >Esqueci minha senha</a
+        >
+
+        <ion-button
+          type="submit"
+          expand="block"
+          class="login-button"
+          [disabled]="loginForm.invalid"
+          >Entrar</ion-button
+        >
+
+        <p class="signup-text">
+          Não tem conta?
+          <a routerLink="/cadastro" class="signup-link">Cadastre-se</a>
+        </p>
+
+        <!-- <div class="social-login">
+          <p>entrar com</p>
+          <div class="social-icons">
+            <ion-icon name="logo-google"></ion-icon>
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-apple"></ion-icon>
+          </div>
+        </div> -->
+      </form>
     </div>
   </div>
 </ion-content>
-
-
-
-

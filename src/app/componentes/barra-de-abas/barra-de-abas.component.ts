@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonButton, IonIcon, IonLabel, IonToolbar, IonTabButton, IonButtons } from "@ionic/angular/standalone";
+import {
+  IonButton,
+  IonIcon,
+  IonLabel,
+  IonToolbar,
+  IonTabButton,
+  IonButtons,
+} from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,21 +16,18 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./barra-de-abas.component.scss'],
   standalone: true,
   imports: [
-    CommonModule, 
-    IonToolbar, 
-    //IonButton, 
-    IonIcon, 
-    IonLabel, 
+    CommonModule,
+    IonToolbar,
+    IonIcon,
+    IonLabel,
     IonTabButton,
-    IonButtons
-  ]
+    IonButtons,
+  ],
 })
 export class BarraDeAbasComponent {
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   navegar(path: string) {
     this.router.navigate([path]);
   }
-
 }
