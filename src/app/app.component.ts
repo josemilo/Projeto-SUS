@@ -1,32 +1,32 @@
 import { Component } from '@angular/core';
-import { addIcons } from 'ionicons'; 
+import { addIcons } from 'ionicons';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
-import { 
-  settings,
+import {
+  logOut,
   phonePortraitOutline,
-  calendarOutline, 
+  calendarOutline,
   pulseOutline,
-  documentTextOutline, 
-  eyedropOutline, 
-  addCircleOutline, 
-  mapOutline, 
-  home, 
-  apps, 
-  medkit, 
-  person, 
-  locationOutline, 
-  calendarNumberOutline, 
-  statsChartOutline, 
+  documentTextOutline,
+  eyedropOutline,
+  addCircleOutline,
+  mapOutline,
+  home,
+  apps,
+  medkit,
+  person,
+  locationOutline,
+  calendarNumberOutline,
+  statsChartOutline,
   businessOutline,
-  grid, 
+  grid,
   megaphone,
   medkitOutline,
   cardOutline,
   documentAttachOutline,
   bugOutline,
   bookOutline,
-  arrowBack
+  arrowBack,
 } from 'ionicons/icons';
 
 @Component({
@@ -37,13 +37,11 @@ import {
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-  
   constructor() {
-
     document.body.setAttribute('color-theme', 'light');
-    
+
     addIcons({
-      settings,
+      logOut,
       phonePortraitOutline,
       calendarOutline,
       pulseOutline,
@@ -66,7 +64,7 @@ export class AppComponent {
       documentAttachOutline,
       bugOutline,
       bookOutline,
-      arrowBack
+      arrowBack,
     });
   }
 }

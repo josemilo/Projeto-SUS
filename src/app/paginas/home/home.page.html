@@ -4,8 +4,11 @@
 
 <ion-content [fullscreen]="true">
   <div class="content-padding">
-
-    <ion-img src="assets/imagens/titulo.png" alt="A saúde é o maior bem que podemos cultivar" class="top-image"></ion-img>
+    <ion-img
+      src="assets/imagens/titulo.png"
+      alt="A saúde é o maior bem que podemos cultivar"
+      class="top-image"
+    ></ion-img>
 
     <ion-searchbar placeholder="Buscar" class="search-bar"></ion-searchbar>
 
@@ -20,7 +23,11 @@
       <ion-grid class="servicos-grid">
         <ion-row>
           <ion-col size="4" *ngFor="let item of servicosReduzidos">
-            <ion-card class="service-card-home" button (click)="onServiceClick(item.id)">
+            <ion-card
+              class="service-card-home"
+              button
+              (click)="onServiceClick(item.id)"
+            >
               <div class="service-icon-circle-home">
                 <ion-icon [name]="item.icon" aria-hidden="true"></ion-icon>
               </div>
@@ -33,12 +40,10 @@
 
     <div class="section">
       <h3>PRÓXIMOS AGENDAMENTOS</h3>
-      <div class="placeholder-agendamentos">
-        PRÓXIMOS AGENDAMENTOS
-      </div>
+      <div class="placeholder-agendamentos">PRÓXIMOS AGENDAMENTOS</div>
     </div>
-
-  </div> </ion-content>
+  </div>
+</ion-content>
 
 <ion-footer>
   <app-barra-de-abas></app-barra-de-abas>
