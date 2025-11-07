@@ -28,10 +28,12 @@
               button
               (click)="onServiceClick(item.id)"
             >
-              <div class="service-icon-circle-home">
-                <ion-icon [name]="item.icon" aria-hidden="true"></ion-icon>
+              <div class="card-content-container">
+                <div class="service-icon-circle-home">
+                  <ion-icon [name]="item.icon" aria-hidden="true"></ion-icon>
+                </div>
+                <ion-label>{{ item.name }}</ion-label>
               </div>
-              <ion-label>{{ item.name }}</ion-label>
             </ion-card>
           </ion-col>
         </ion-row>
