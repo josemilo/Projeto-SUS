@@ -1,0 +1,38 @@
+<ion-card *ngIf="appointment" class="appointment-card">
+  <ion-card-header class="card-header">
+    <div class="date-time">
+      <div class="date">{{ formattedDate }}</div>
+      <div class="time">{{ formattedTime }}</div>
+    </div>
+    <div class="status">
+      <ion-badge [color]="statusColor" mode="ios">{{
+        appointment.status
+      }}</ion-badge>
+    </div>
+  </ion-card-header>
+
+  <ion-card-content class="card-content">
+    <div class="info-item">
+      <ion-icon name="medkit-outline" slot="start"></ion-icon>
+      <ion-label>
+        <h2>{{ appointment.type }}</h2>
+      </ion-label>
+    </div>
+
+    <div class="info-item">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-label>
+        <h2>{{ appointment.doctor.name }}</h2>
+        <p>{{ appointment.doctor.specialty }}</p>
+      </ion-label>
+    </div>
+
+    <div class="info-item">
+      <ion-icon name="business-outline" slot="start"></ion-icon>
+      <ion-label>
+        <h2>{{ appointment.healthUnit.name }}</h2>
+        <p>{{ appointment.healthUnit.address }}</p>
+      </ion-label>
+    </div>
+  </ion-card-content>
+</ion-card>

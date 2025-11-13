@@ -9,7 +9,7 @@ ion-content {
 
 .content-padding {
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 92px;
 }
 
 /* --- Imagem do Topo --- */
@@ -20,7 +20,6 @@ ion-content {
   margin-bottom: 20px;
 }
 
-/* --- Barra de Busca --- */
 .search-bar {
   padding-left: 16px;
   padding-right: 16px;
@@ -30,7 +29,6 @@ ion-content {
   --background: #f0f0f0;
 }
 
-/* --- Seções --- */
 .section {
   padding-left: 16px;
   padding-right: 16px;
@@ -112,7 +110,6 @@ ion-content {
   }
 }
 
-/* --- Placeholder Agendamentos --- */
 .placeholder-agendamentos {
   background-color: #f0f0f0;
   border-radius: 8px;
@@ -122,10 +119,6 @@ ion-content {
   font-weight: 500;
 }
 
-/* ============================
-   Ajustes para telas específicas
-   ============================ */
-/* Celulares bem pequenos */
 @media (max-width: 360px) {
   :root {
     --card-min-width: 100px;

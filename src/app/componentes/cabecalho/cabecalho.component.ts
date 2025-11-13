@@ -18,6 +18,10 @@ import { Router } from '@angular/router';
 export class CabecalhoComponent {
   constructor(private router: Router) {}
 
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
+
   fazerLogout() {
     localStorage.removeItem('token');
     this.router.navigate(['/login']);

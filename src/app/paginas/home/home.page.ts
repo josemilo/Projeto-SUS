@@ -1,55 +1,42 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CabecalhoComponent } from '../../componentes/cabecalho/cabecalho.component';
-import { BarraDeAbasComponent } from '../../componentes/barra-de-abas/barra-de-abas.component';
 
-import {
-  IonHeader,
-  IonContent,
-  IonFooter,
-  IonImg,
-  IonSearchbar,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonCard,
-  IonIcon,
-  IonLabel,
-  IonButton,
-  IonText,
-  IonToolbar,
-} from '@ionic/angular/standalone';
+import { API_BASE_URL } from 'src/app/shared/api.url';
+import { Appointment } from 'src/app/componentes/appointment-card/appointment-card.component';
+import { HttpClient } from '@angular/common/http';
+
+interface AgendamentoApi {
+  _id: string;
+  dateTime: string;
+  type: string;
+  status: 'Pending' | 'Confirmed' | 'Cancelled' | string;
+  user: string;
+  doctor: {
+    _id: string;
+    name: string;
+    specialty: string;
+  };
+  healthUnit: {
+    _id: string;
+    name: string;
+    address: string;
+  };
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  standalone: true,
-
-  imports: [
-    //IonToolbar,
-    CommonModule,
-    FormsModule,
-    IonHeader,
-    IonContent,
-    IonFooter,
-    IonImg,
-    IonSearchbar,
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonCard,
-    IonIcon,
-    IonLabel,
-    //IonButton,
-    IonText,
-    CabecalhoComponent,
-    BarraDeAbasComponent,
-  ],
+  standalone: false,
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  private readonly API_URL = API_BASE_URL;
+  public agendamentos: Appointment[] = [];
+  public isLoading: boolean = false;
+
   private allServices = [
     {
       id: 'teleconsulta',
@@ -80,7 +67,59 @@ export class HomePage {
 
   servicosReduzidos = this.allServices.slice(0, 3);
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
+
+  ngOnInit() {
+    this.carregarAgendamentos();
+  }
+
+  carregarAgendamentos() {
+    this.isLoading = true;
+    const url = this.API_URL + '/appointments';
+
+    this.http
+      .get<AgendamentoApi[]>(url, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      })
+      .subscribe({
+        next: (dadosDaApi) => {
+          const agendamentosFormatados = dadosDaApi.map(
+            (apiItem): Appointment => {
+              return {
+                _id: apiItem._id,
+                dateTime: apiItem.dateTime,
+                type: apiItem.type,
+                status: apiItem.status,
+                doctor: apiItem.doctor,
+                healthUnit: apiItem.healthUnit,
+              };
+            }
+          );
+
+          this.agendamentos = agendamentosFormatados.sort((a, b) => {
+            return (
+              new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()
+            );
+          });
+
+          this.isLoading = false;
+        },
+        error: (err) => {
+          console.error('Erro ao buscar agendamentos', err);
+          this.isLoading = false;
+        },
+      });
+  }
+
+  handleRefresh(event: any) {
+    this.carregarAgendamentos();
+
+    setTimeout(() => {
+      event.target.complete();
+    }, 1500);
+  }
 
   onServiceClick(serviceId: string) {
     console.log('Clicou no serviço (Home):', serviceId);
@@ -89,12 +128,7 @@ export class HomePage {
       navigationPromise = this.router.navigate(['/agendar-consulta']);
     } else if (serviceId === 'exame') {
       navigationPromise = this.router.navigate(['/agendar-exames']);
-    }
-    // Adicione o 'teleconsulta' se for implementar a tela dele
-    // else if (serviceId === 'teleconsulta') {
-    //   navigationPromise = this.router.navigate(['/agendar-teleconsulta']);
-    // }
-    else {
+    } else {
       console.warn('Nenhuma rota definida para o serviceId:', serviceId);
       return;
     }
@@ -105,9 +139,7 @@ export class HomePage {
     }
   }
 
-  // Função para o botão "Ver mais"
   verTodosServicos() {
-    // Navega para a página principal de Serviços
     this.router.navigate(['/servicos']);
   }
 }

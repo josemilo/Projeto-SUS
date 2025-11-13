@@ -1,5 +1,13 @@
 <ion-toolbar>
-  <img src="assets/icon/sus-logo.png" alt="Logo SUS+" class="header-logo-img" />
+  <ion-buttons>
+    <ion-button (click)="goToHome()">
+      <img
+        src="assets/icon/sus-logo.png"
+        alt="Logo SUS+"
+        class="header-logo-img"
+      />
+    </ion-button>
+  </ion-buttons>
 
   <ion-buttons slot="end">
     <ion-button (click)="fazerLogout()">
