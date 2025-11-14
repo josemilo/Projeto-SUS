@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import {
   IonHeader,
   IonToolbar,
@@ -14,8 +13,12 @@ import {
   IonLabel,
   IonCard,
   IonCardContent,
-  IonFooter
+  IonFooter,
+  IonIcon,
+  ToastController
 } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { cloudUploadOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-agendar-exames',
@@ -37,21 +40,67 @@ import {
     IonLabel,
     IonCard,
     IonCardContent,
-    IonFooter
+    IonFooter,
+    IonIcon
   ]
 })
 export class AgendarExamesPage {
 
-  constructor() { }
+  tipoExame: string = '';
+  unidade: string = '';
+  
+  arquivoGuia: File | null = null; 
+  nomeArquivoGuia: string = 'Carregar arquivo';
 
-  carregarArquivo() {
-    // Lógica para abrir o seletor de arquivos
-    console.log('Abrindo seletor de arquivos...');
+  constructor(private toastController: ToastController) {
+    addIcons({ cloudUploadOutline });
+  }
+
+  onFileSelected(event: any): void {
+    const file: File = event.target.files[0];
+
+    if (file) {
+      this.arquivoGuia = file;
+      this.nomeArquivoGuia = file.name; 
+      console.log('Arquivo selecionado:', this.arquivoGuia);
+    }
   }
 
   agendar() {
-    // Lógica para o botão "Agendar"
+    if (!this.tipoExame || this.tipoExame.trim() === '') {
+      this.presentarToast('Por favor, informe o tipo de exame.', 'danger');
+      return;
+    }
+
+    if (!this.arquivoGuia) {
+      this.presentarToast('Por favor, anexe a foto da guia.', 'danger');
+      return;
+    }
+
+    if (!this.unidade || this.unidade.trim() === '') {
+      this.presentarToast('Por favor, escolha uma unidade.', 'danger');
+      return;
+    }
+
     console.log('Agendando exame...');
+    console.log('Exame:', this.tipoExame);
+    console.log('Unidade:', this.unidade);
+    console.log('Arquivo:', this.arquivoGuia.name);
+    
+    this.presentarToast('Exame agendado com sucesso!', 'success');
+    
   }
 
+  async presentarToast(
+    mensagem: string,
+    color: 'success' | 'danger' | 'warning'
+  ) {
+    const toast = await this.toastController.create({
+      message: mensagem,
+      duration: 3000,
+      position: 'bottom',
+      color: color,
+    });
+    toast.present();
+  }
 }

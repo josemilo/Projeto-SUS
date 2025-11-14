@@ -15,29 +15,58 @@
     <ion-card class="search-card">
       <ion-card-content>
         <ion-label>Tipo de exame:</ion-label>
-        <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+        <ion-searchbar 
+          placeholder="Buscar" 
+          class="custom-searchbar"
+          [(ngModel)]="tipoExame"
+        ></ion-searchbar>
       </ion-card-content>
     </ion-card>
 
     <ion-card class="search-card">
       <ion-card-content>
-        <ion-label>Anexar foto da guia:</ion-label>
-        <ion-button class="upload-button" expand="full" (click)="carregarArquivo()">
-          Carregar arquivo
+       
+         <ion-label>Anexar foto da guia:</ion-label>
+
+        <input
+          type="file"
+          accept="image/png, image/jpeg, application/pdf"
+          style="display: none;"
+          #fileUploadInput
+          (change)="onFileSelected($event)"
+        />
+
+        <ion-button 
+          class="upload-button" 
+          expand="full" 
+          (click)="fileUploadInput.click()"
+        >
+          <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
+          {{ nomeArquivoGuia }}
         </ion-button>
+        
       </ion-card-content>
     </ion-card>
 
     <ion-card class="search-card">
       <ion-card-content>
         <ion-label>Escolha uma unidade:</ion-label>
-        <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+        <ion-searchbar 
+          placeholder="Buscar" 
+          class="custom-searchbar"
+          [(ngModel)]="unidade"
+        ></ion-searchbar>
       </ion-card-content>
     </ion-card>
 
-  </div> <ion-footer class="ion-no-border">
+  </div> 
+  
+  <ion-footer class="ion-no-border">
     <ion-toolbar>
-      <ion-button class="agendar-button" (click)="agendar()" expand="full">
+      <ion-button 
+        class="agendar-button" 
+        (click)="agendar()" 
+        expand="full">
         Agendar
       </ion-button>
     </ion-toolbar>
