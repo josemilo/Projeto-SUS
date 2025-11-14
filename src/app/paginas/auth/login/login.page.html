@@ -1,10 +1,10 @@
 <ion-content class="login-content">
-  <!-- Forma branca sobre o fundo azul -->
   <div class="white-shape">
     <div class="login-container">
       <h1 class="login-title">Login</h1>
 
       <form [formGroup]="loginForm" (ngSubmit)="fazerLogin()">
+        
         <div class="input-group">
           <label for="usuario">Usuário:</label>
           <ion-input
@@ -13,14 +13,21 @@
             formControlName="usuario"
           ></ion-input>
         </div>
+        
         <div class="input-group">
           <label for="senha">Senha:</label>
           <ion-input
             id="senha"
-            type="password"
+            [type]="showPassword ? 'text' : 'password'"
             placeholder="Digite sua senha"
             formControlName="senha"
           ></ion-input>
+          <ion-icon
+            class="password-icon"
+            [name]="passwordIcon"
+            (click)="togglePassword()"
+            aria-label="Mostrar/ocultar senha"
+          ></ion-icon>
         </div>
 
         <a routerLink="/esqueci-minha-senha" class="forgot-password"

@@ -1,0 +1,36 @@
+<ion-content class="ion-padding modal-content">
+  <div class="modal-header">
+    <h2>Adicionar Alergias</h2>
+    <p>Selecione um grupo de alergias.</p>
+  </div>
+
+  <ion-accordion-group expand="inset" class="allergy-accordions">
+    <ion-accordion *ngFor="let categoria of categorias" [value]="categoria.id">
+      <ion-item slot="header" lines="none">
+        <ion-icon [name]="categoria.icone" slot="start" color="medium"></ion-icon>
+        <ion-label>{{ categoria.titulo }}</ion-label>
+      </ion-item>
+      <div class="ion-padding-horizontal" slot="content">
+        <ion-list lines="none">
+          <ion-item *ngFor="let item of categoria.itens">
+            <ion-label class="ion-text-wrap">{{ item.nome }}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="item.marcado"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="footer-buttons">
+      <ion-button fill="clear" (click)="cancelar()" class="btn-cancelar">
+        Cancelar
+      </ion-button>
+      <ion-button shape="round" (click)="salvar()" class="btn-salvar">
+        Salvar
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

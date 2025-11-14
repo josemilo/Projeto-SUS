@@ -9,6 +9,7 @@
 
     <form [formGroup]="cadastroForm" (ngSubmit)="fazerCadastro()">
       <div class="form-container">
+        
         <div class="form-field">
           <ion-label>Nome:</ion-label>
           <ion-input
@@ -18,6 +19,7 @@
             class="custom-input"
           ></ion-input>
         </div>
+        
         <div class="form-field">
           <ion-label>Email:</ion-label>
           <ion-input
@@ -27,7 +29,6 @@
             class="custom-input"
           ></ion-input>
         </div>
-
         <div class="form-field">
           <ion-label>Data de Nascimento:</ion-label>
           <ion-input
@@ -37,7 +38,6 @@
             class="custom-input"
           ></ion-input>
         </div>
-
         <div class="form-field">
           <ion-label>CNS:</ion-label>
           <ion-input
@@ -47,7 +47,6 @@
             class="custom-input"
           ></ion-input>
         </div>
-
         <div class="form-field">
           <ion-label>CPF:</ion-label>
           <ion-input
@@ -57,7 +56,6 @@
             class="custom-input"
           ></ion-input>
         </div>
-
         <div class="form-field">
           <ion-label>Telefone:</ion-label>
           <ion-input
@@ -73,18 +71,31 @@
           <ion-input
             id="senha"
             formControlName="senha"
-            type="password"
+            [type]="showPassword ? 'text' : 'password'"
             class="custom-input"
           ></ion-input>
+          <ion-icon
+            class="password-icon"
+            [name]="passwordIcon"
+            (click)="togglePassword()"
+            aria-label="Mostrar/ocultar senha"
+          ></ion-icon>
         </div>
+        
         <div class="form-field">
           <ion-label>Confirme a senha:</ion-label>
           <ion-input
             id="confirmarSenha"
             formControlName="confirmarSenha"
-            type="password"
+            [type]="showConfirmPassword ? 'text' : 'password'"
             class="custom-input"
           ></ion-input>
+          <ion-icon
+            class="password-icon"
+            [name]="confirmPasswordIcon"
+            (click)="toggleConfirmPassword()"
+            aria-label="Mostrar/ocultar senha"
+          ></ion-icon>
         </div>
       </div>
 

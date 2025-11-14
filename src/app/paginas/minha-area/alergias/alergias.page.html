@@ -9,20 +9,43 @@
 
 <ion-content [fullscreen]="true">
   <div class="content-container">
-    
+
     <ion-img src="assets/icon/alergia.png" alt="Ilustração de Alergia" class="main-image"></ion-img>
 
     <h2 class="main-title">
-      Você ainda não possui alergias cadastradas.
+      {{ alergiasCadastradas.length > 0 ? 'Minhas Alergias' : 'Você ainda não possui alergias cadastradas.' }}
     </h2>
 
-    <p class="description-text">
-      Ao adicionar alergias, os profissionais de saúde poderão visualizar as informações registradas no seu próximo atendimento, por meio do Conecte SUS Profissional
-    </p>
+    <div *ngIf="alergiasCadastradas.length === 0" class="empty-state">
+      <p class="description-text">
+        Ao adicionar alergias, os profissionais de saúde poderão visualizar as informações registradas no seu próximo atendimento.
+      </p>
 
-    <ion-button class="add-button" (click)="abrirModalAlergias()" expand="full">
-      <ion-icon name="add" slot="start"></ion-icon>
-      Adicionar Alergias
-    </ion-button>
+      <ion-button class="add-button" (click)="abrirModalAlergias()" expand="full">
+        <ion-icon name="add" slot="start"></ion-icon>
+        Adicionar Alergias
+      </ion-button>
+    </div>
 
-  </div> </ion-content>
+    <div *ngIf="alergiasCadastradas.length > 0" class="list-state">
+
+      <div class="cards-grid">
+        <div class="alergia-card" *ngFor="let alergia of alergiasCadastradas">
+          <div class="card-icon-wrapper">
+            <ion-icon [name]="getIconeCategoria(alergia.categoria)"></ion-icon>
+          </div>
+          <div class="card-content">
+            <span class="alergia-nome">{{ alergia.nome }}</span>
+            <span class="alergia-grupo">{{ alergia.categoria }}</span>
+          </div>
+        </div>
+      </div>
+
+      <ion-button (click)="abrirModalAlergias()" expand="block" fill="outline" class="btn-editar">
+        Editar Alergias
+      </ion-button>
+
+    </div>
+
+  </div>
+</ion-content>

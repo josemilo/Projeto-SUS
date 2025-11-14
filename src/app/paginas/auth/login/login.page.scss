@@ -42,6 +42,7 @@
   .input-group {
     text-align: left;
     margin-bottom: 18px;
+    position: relative;
 
     label {
       font-size: 15px;
@@ -70,6 +71,21 @@
       color: #999999;
       opacity: 1;
     }
+  }
+
+  .password-icon {
+    position: absolute;
+    top: 50%;
+    right: 12px; 
+    transform: translateY(0); 
+  
+    z-index: 10;
+    font-size: 1.4rem; 
+    color: #888
+  }
+
+  .input-group ion-input[formControlName="senha"] {
+    --padding-end: 40px !important;
   }
 
   /* Esqueci minha senha */

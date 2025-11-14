@@ -29,6 +29,8 @@ import {
   arrowBack,
   closeCircleOutline,
   trashOutline,
+  eyeOffOutline,
+  eyeOutline,
 } from 'ionicons/icons';
 
 @Component({
@@ -69,6 +71,8 @@ export class AppComponent {
       arrowBack,
       closeCircleOutline,
       trashOutline,
+      eyeOffOutline,
+      eyeOutline
     });
   }
 }

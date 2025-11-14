@@ -16,7 +16,7 @@ export class StartPage implements OnInit{
 
   ionViewDidEnter() {
     setTimeout(() => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
     }, 2500);
   }
 

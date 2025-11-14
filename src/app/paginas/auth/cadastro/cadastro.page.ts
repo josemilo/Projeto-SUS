@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { Location 
+} from '@angular/common';
 
 import {
   FormBuilder,
@@ -23,7 +24,6 @@ export const senhasIguaisValidator: ValidatorFn = (
     ? { senhasNaoConferem: true }
     : null;
 };
-
 @Component({
   standalone: false,
   selector: 'app-cadastro',
@@ -33,6 +33,12 @@ export const senhasIguaisValidator: ValidatorFn = (
 export class CadastroPage implements OnInit {
   cadastroForm!: FormGroup;
   isLoading = false;
+
+  showPassword = false;
+  passwordIcon = 'eye-off-outline';
+
+  showConfirmPassword = false;
+  confirmPasswordIcon = 'eye-off-outline';
 
   constructor(
     private location: Location,
@@ -49,6 +55,7 @@ export class CadastroPage implements OnInit {
         email: ['', [Validators.required, Validators.email]],
         dataDeNascimento: ['', [Validators.required]],
         cns: ['', [Validators.required]],
+        
         cpf: ['', [Validators.required]],
         telefone: ['', [Validators.required]],
         senha: ['', [Validators.required, Validators.minLength(8)]],
@@ -58,6 +65,24 @@ export class CadastroPage implements OnInit {
         validators: senhasIguaisValidator,
       }
     );
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+    if (this.showPassword) {
+      this.passwordIcon = 'eye-outline';
+    } else {
+      this.passwordIcon = 'eye-off-outline';
+    }
+  }
+
+  toggleConfirmPassword() {
+    this.showConfirmPassword = !this.showConfirmPassword;
+    if (this.showConfirmPassword) {
+      this.confirmPasswordIcon = 'eye-outline';
+    } else {
+      this.confirmPasswordIcon = 'eye-off-outline';
+    }
   }
 
   goBack() {
@@ -131,7 +156,6 @@ export class CadastroPage implements OnInit {
     }
 
     const { confirmarSenha, ...dadosCadastro } = this.cadastroForm.value;
-
     const corpoDaRequisicao = {
       name: dadosCadastro.nome,
       email: dadosCadastro.email,
@@ -143,7 +167,6 @@ export class CadastroPage implements OnInit {
         .toISOString()
         .split('T')[0],
     };
-
     const url = API_BASE_URL + '/auth/register';
 
     this.isLoading = true;
